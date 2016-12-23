@@ -1,0 +1,48 @@
+<div id="appointment">
+    <h2>Create an Appointment</h2>
+    <div class="row">
+        <div class="col-md-6 col-xs-12 form-input">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" {{#if data.title}}value="{{data.title}}"{{/if}} />
+        </div>
+        <div class="col-md-6 col-xs-12 form-input">
+            <label for="location">Location</label>
+            <input type="text" name="location" id="location" {{#if data.location}}value="{{data.location}}"{{/if}} />
+        </div>
+    </div>
+    <div class="row js-calendar">
+        <div class="col-md-12 col-xs-12 form-input">
+            <label for="date">Date:</label>
+            <div class="calendar">
+                <input type='text' class="date" id="date" name="date" readonly {{#if data.date}}value="{{data.date}}"{{/if}}/>
+                <span class="glyphicon glyphicon-calendar icon"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row js-time">
+        <div class="col-md-6 col-xs-12 form-input">
+            <label for="from">From (Available Time Slots):</label>
+            <div class="custom-dropdown">
+                <select id="from" name="from">
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-12 form-input">
+            <label for="to">To (Available Time Slots):</label>
+            <div class="custom-dropdown">
+                <select id="to" name="to">
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-12 form-input">
+            <label for="desc">Description</label>
+            <textarea id="desc" name="desc" {{#if data.description}}value="{{data.description}}"{{/if}}></textarea>
+        </div>
+    </div>
+    <div class="text-center submit">
+        <button type="submit" class="btn btn-default">{{#if data}}Edit{{else}}Create{{/if}}</button>
+        <span class="error">No Time Slot available.</span>
+    </div>
+</div>

@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    &:before,
+    &:after {
+        box-sizing: border-box;
+    }
+}
+
+html {
+    font-size: $primary-font-size;
+}
+
+body {
+    font-size: toRem(14px);
+    color: $primary-font-color;
+    background: url('/media/images/back2.jpg');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+nav,
+ul,
+ol,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: toRem(24px);
+    text-transform: uppercase;
+    @include mediaDesktop {
+        font-size: toRem(30px);
+    }
+}
+
+h2 {
+    font-size: toRem(18px);
+    text-transform: uppercase;
+    @include mediaDesktop {
+        font-size: toRem(24px);
+    }
+}
+
+h3 {
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    color: $primary-font-color;
+    text-decoration: none;
+    &:hover,
+    &:active,
+    &:visited {
+        text-decoration: none;
+        color: $primary-font-color;
+    }
+}
+
+.lFloat {
+    float: left;
+}
+
+.rFloat {
+    float: right;
+}
+
+.form-input {
+    input,
+    textarea,
+    select {
+        padding-left: toRem(10px);
+        height: toRem(35px);
+        width: 100%;
+        border-radius: toRem(2px);
+    }
+    input,
+    textarea {
+        border: 1px solid $form-border-color;
+    }
+    .custom-dropdown {
+        border: 1px solid $form-border-color;
+        position: relative;
+        border-radius: toRem(2px);
+        select {
+            border: none;
+            z-index: 10;
+            background: transparent;
+            position: relative;
+            @include v-prefix (appearance,
+            none);
+        }
+        &:after {
+            content: '\2228';
+            display: inline-block;
+            font-size: toRem(24px);
+            height: toRem(35px);
+            padding: 0 15px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: $c-white;
+            background: #9E9E9E;
+            z-index: 0;
+        }
+    }
+}
+
+label {
+    font-size: toRem(12px);
+    font-weight: 500;
+}
+
+.calendar {
+    position: relative;
+    .glyphicon-calendar.icon {
+        position: absolute;
+        background: #9E9E9E;
+        top: 0;
+        right: 0;
+        height: toRem(35px);
+        padding: 0 toRem(20px);
+        color: $c-white;
+        &:before {
+            position: relative;
+            top: toRem(8px);
+            right: toRem(7px);
+            font-size: toRem(18px);
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

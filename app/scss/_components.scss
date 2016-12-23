@@ -1,0 +1,199 @@
+header {
+    background: $header-background;
+    color: $c-white;
+    padding: toRem(30px) toRem(15px);
+    margin-bottom: toRem(20px);
+    a {
+        color: $c-white;
+        &:hover,
+        &:active,
+        &:visited {
+            color: $c-white;
+        }
+    }
+}
+footer {
+    padding: toRem(15px) toRem(20px);
+    background: $header-background;
+    opacity: 0.8;
+    color: $c-white;
+    text-align: center;
+    margin-top: toRem(20px);
+}
+nav {
+    position: relative;
+    top: toRem(1px);
+    .tab-list {
+        li {
+            display: inline-block;
+            padding: toRem(10px) toRem(15px);
+            margin: 0 toRem(10px);
+            border: 1px solid $c-black;
+            border-bottom: none;
+            font-size: toRem(14px);
+            font-weight: 500;
+            &:hover {
+                cursor: pointer;
+            }
+            &.active {
+                background: $c-white;
+                font-weight: 600;
+                pointer-events: none;
+            }
+            @mediaTabDesktop {
+                font-size: toRem(16px);
+            }
+        }
+    }
+}
+
+main {
+    min-height: toRem(250px);
+    padding: toRem(15px);
+    background: $c-white;
+    border: 1px solid $c-black;
+    section {
+        padding: toRem(25px) 0;
+        @include mediaDesktop {
+            padding: toRem(25px);
+        }
+    }
+    .submit {
+        padding-top: toRem(15px);
+        margin-top: toRem(15px);
+        border-top: 1px solid $form-border-color;
+        button[type="submit"] {
+            &+.error {
+                display: none;
+            }
+            &.disabled {
+                &+.error {
+                    display: block;
+                    color: red;
+                }
+            }
+        }
+    }
+    #create {
+        .result-view {
+            padding: toRem(25px) 0;
+            .form-input {
+                margin-bottom: toRem(20px);
+            }
+            textarea {
+                resize: vertical;
+                min-height: toRem(75px);
+            }
+        }
+        #plan {
+            .add-task,
+            .remove-task {
+                margin: toRem(15px) toRem(15px) 0 0;
+            }
+            .task-container {
+                .task {
+                    padding-top: toRem(15px);
+                }
+            }
+        }
+    }
+    #list {
+        .event-listing {
+            padding: toRem(25px) 0;
+            .grid-view {
+                padding: toRem(15px) 0;
+                article {
+                    margin-bottom: toRem(30px);
+                    .tile {
+                        border-radius: toRem(2px);
+                        background :$tile-background;
+                        @include v-prefix(box-shadow, 0 0 5px $c-black);
+                        h3 {
+                            padding: toRem(10px);
+                        }
+                        .event-detail {
+                            padding: toRem(5px) toRem(10px);
+                            span {
+                                display: block;
+                                text-transform: capitalize;
+                            }
+                            .heading {
+                                font-weight: 600;
+                                font-size: toRem(12px);
+                            }
+                            .task-list {
+                                li {
+                                    padding: 10px 5px;
+                                    &:nth-child(even) {
+                                        background: #EEEEEE;
+                                    }
+                                    &:nth-child(odd) {
+                                        background: #F7F7F7;
+                                    }
+                                    &.pending {
+                                        .task-name {
+                                            color: #d50000
+                                        }
+                                    }
+                                    &.wip {
+                                        .task-name {
+                                            color: #FBC02D
+                                        }
+                                    }
+                                    &.done {
+                                        .task-name {
+                                            color: #2E7D32
+                                        }
+                                    }
+                                    .task-name {
+                                        font-weight: 600;
+                                    }
+                                    .status {
+                                        label {
+                                            margin: 0 toRem(5px);
+                                            input {
+                                                position: relative;
+                                                top: toRem(2px);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .banner {
+                            height: toRem(35px);
+                            padding-top: toRem(5px);
+                            text-align: center;
+                            color: $c-white;
+                            font-size: toRem(16px);
+                            text-transform: uppercase;
+                            &.meeting {
+                                background: #607D8B;
+                                @include v-prefix(box-shadow, 0 0 10px #607D8B);
+                            }
+                            &.appointment {
+                                background: #00796B;
+                                @include v-prefix(box-shadow, 0 0 10px #00796B);
+                            }
+                            &.plan {
+                                background: #424242;
+                                @include v-prefix(box-shadow, 0 0 10px #424242);
+                            }
+                            &.reminder {
+                                background: #A52A2A;
+                                @include v-prefix(box-shadow, 0 0 10px #A52A2A);
+                            }
+                        }
+                        .equal-height {
+                            margin-bottom: toRem(10px);
+                            @include mediaTabDesktop {
+                                height: toRem(150px);
+                                overflow-y: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

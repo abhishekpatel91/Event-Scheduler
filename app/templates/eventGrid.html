@@ -1,0 +1,61 @@
+{{#each data}}
+<article class="col-lg-4 col-md-4 col-sm-6 col-xs-12" data-identifier={{type}}{{reminderTime}}>
+    <div class="tile">
+        <div class="banner {{type}}">{{type}}</div>
+        {{#if title}}
+        <h3 class="">{{title}}</h3> {{/if}} {{#if date}}
+        <div class="event-detail">
+            <span class="heading">Date:</span>
+            <span class="value">{{date}}</span>
+        </div>
+        {{/if}} {{#if from}}
+        <div class="event-detail">
+            <span class="heading">Time:</span>
+            <span class="value">{{from}} {{#if to}}to {{to}}{{/if}}</span>
+        </div>
+        {{/if}}
+        <div class="equal-height">
+            {{#if invitees}}
+            <div class="event-detail">
+                <span class="heading">Invitees:</span>
+                <span class="value">{{invitees}}</span>
+            </div>
+            {{/if}} {{#if description}}
+            <div class="event-detail">
+                <span class="heading">Description:</span>
+                <span class="value">{{description}}</span>
+            </div>
+            {{/if}} {{#if tasks}}
+            <div class="event-detail">
+                <span class="heading">Tasks({{tasks.length}}):</span>
+                <ul class="task-list">
+                    {{#each tasks}}
+                    <li class="pending">
+                        <span class="task-name">&#9632; {{title}}</span>
+                        <div class="status">
+                            <label for="radio{{@index}}0">
+                                Pending
+                                <input checked type="radio" name="radio{{@index}}" id="radio{{@index}}0" value="pending" />
+                            </label>
+                            <label for="radio{{@index}}1">
+                                In Progress
+                                <input type="radio" name="radio{{@index}}" id="radio{{@index}}1" value="wip" />
+                            </label>
+                            <label for="radio{{@index}}2">
+                                Done
+                                <input type="radio" name="radio{{@index}}" id="radio{{@index}}2" value="done" />
+                            </label>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{/if}}
+        </div>
+        <div class="event-detail clearfix">
+            <button class="btn btn-default edit lFloat">Edit</button>
+            <button class="btn btn-danger delete rFloat">Delete</button>
+        </div>
+    </div>
+</article>
+{{/each}}

@@ -1,0 +1,352 @@
+/********** Gloabally used partial **********/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 0.875rem;
+  color: #444;
+  background: url("/media/images/back2.jpg");
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+nav,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+@media (min-width: 992px) {
+  h1 {
+    font-size: 1.875rem;
+  }
+}
+
+h2 {
+  font-size: 1.125rem;
+  text-transform: uppercase;
+}
+@media (min-width: 992px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+h3 {
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: #444;
+  text-decoration: none;
+}
+a:hover, a:active, a:visited {
+  text-decoration: none;
+  color: #444;
+}
+
+.lFloat {
+  float: left;
+}
+
+.rFloat {
+  float: right;
+}
+
+.form-input input,
+.form-input textarea,
+.form-input select {
+  padding-left: 0.625rem;
+  height: 2.1875rem;
+  width: 100%;
+  border-radius: 0.125rem;
+}
+.form-input input,
+.form-input textarea {
+  border: 1px solid #acacac;
+}
+.form-input .custom-dropdown {
+  border: 1px solid #acacac;
+  position: relative;
+  border-radius: 0.125rem;
+}
+.form-input .custom-dropdown select {
+  border: none;
+  z-index: 10;
+  background: transparent;
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+}
+.form-input .custom-dropdown:after {
+  content: '\2228';
+  display: inline-block;
+  font-size: 1.5rem;
+  height: 2.1875rem;
+  padding: 0 15px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  background: #9E9E9E;
+  z-index: 0;
+}
+
+label {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.calendar {
+  position: relative;
+}
+.calendar .glyphicon-calendar.icon {
+  position: absolute;
+  background: #9E9E9E;
+  top: 0;
+  right: 0;
+  height: 2.1875rem;
+  padding: 0 1.25rem;
+  color: #fff;
+}
+.calendar .glyphicon-calendar.icon:before {
+  position: relative;
+  top: 0.5rem;
+  right: 0.4375rem;
+  font-size: 1.125rem;
+}
+.calendar .glyphicon-calendar.icon:hover {
+  cursor: pointer;
+}
+
+/********** Components Partial **********/
+header {
+  background: #666;
+  color: #fff;
+  padding: 1.875rem 0.9375rem;
+  margin-bottom: 1.25rem;
+}
+header a {
+  color: #fff;
+}
+header a:hover, header a:active, header a:visited {
+  color: #fff;
+}
+
+footer {
+  padding: 0.9375rem 1.25rem;
+  background: #666;
+  opacity: 0.8;
+  color: #fff;
+  text-align: center;
+  margin-top: 1.25rem;
+}
+
+nav {
+  position: relative;
+  top: 0.0625rem;
+}
+nav .tab-list li {
+  display: inline-block;
+  padding: 0.625rem 0.9375rem;
+  margin: 0 0.625rem;
+  border: 1px solid #000;
+  border-bottom: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+nav .tab-list li:hover {
+  cursor: pointer;
+}
+nav .tab-list li.active {
+  background: #fff;
+  font-weight: 600;
+  pointer-events: none;
+}
+@mediaTabDesktop {
+  nav .tab-list li {
+    font-size: 1rem;
+  }
+}
+main {
+  min-height: 15.625rem;
+  padding: 0.9375rem;
+  background: #fff;
+  border: 1px solid #000;
+}
+main section {
+  padding: 1.5625rem 0;
+}
+@media (min-width: 992px) {
+  main section {
+    padding: 1.5625rem;
+  }
+}
+main .submit {
+  padding-top: 0.9375rem;
+  margin-top: 0.9375rem;
+  border-top: 1px solid #acacac;
+}
+main .submit button[type="submit"] + .error {
+  display: none;
+}
+main .submit button[type="submit"].disabled + .error {
+  display: block;
+  color: red;
+}
+main #create .result-view {
+  padding: 1.5625rem 0;
+}
+main #create .result-view .form-input {
+  margin-bottom: 1.25rem;
+}
+main #create .result-view textarea {
+  resize: vertical;
+  min-height: 4.6875rem;
+}
+main #create #plan .add-task,
+main #create #plan .remove-task {
+  margin: 0.9375rem 0.9375rem 0 0;
+}
+main #create #plan .task-container .task {
+  padding-top: 0.9375rem;
+}
+main #list .event-listing {
+  padding: 1.5625rem 0;
+}
+main #list .event-listing .grid-view {
+  padding: 0.9375rem 0;
+}
+main #list .event-listing .grid-view article {
+  margin-bottom: 1.875rem;
+}
+main #list .event-listing .grid-view article .tile {
+  border-radius: 0.125rem;
+  background: #fcfcfc;
+  -webkit-box-shadow: 0 0 5px #000;
+  -moz-box-shadow: 0 0 5px #000;
+  -o-box-shadow: 0 0 5px #000;
+  -ms-box-shadow: 0 0 5px #000;
+  box-shadow: 0 0 5px #000;
+}
+main #list .event-listing .grid-view article .tile h3 {
+  padding: 0.625rem;
+}
+main #list .event-listing .grid-view article .tile .event-detail {
+  padding: 0.3125rem 0.625rem;
+}
+main #list .event-listing .grid-view article .tile .event-detail span {
+  display: block;
+  text-transform: capitalize;
+}
+main #list .event-listing .grid-view article .tile .event-detail .heading {
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+main #list .event-listing .grid-view article .tile .event-detail .task-list li {
+  padding: 10px 5px;
+}
+main #list .event-listing .grid-view article .tile .event-detail .task-list li:nth-child(even) {
+  background: #EEEEEE;
+}
+main #list .event-listing .grid-view article .tile .event-detail .task-list li:nth-child(odd) {
+  background: #F7F7F7;
+}
+main #list .event-listing .grid-view article .tile .event-detail .task-list li.pending .task-name {
+  color: #d50000;
+}
+main #list .event-listing .grid-view article .tile .event-detail .task-list li.wip .task-name {
+  color: #FBC02D;
+}
+main #list .event-listing .grid-view article .tile .event-detail .task-list li.done .task-name {
+  color: #2E7D32;
+}
+main #list .event-listing .grid-view article .tile .event-detail .task-list li .task-name {
+  font-weight: 600;
+}
+main #list .event-listing .grid-view article .tile .event-detail .task-list li .status label {
+  margin: 0 0.3125rem;
+}
+main #list .event-listing .grid-view article .tile .event-detail .task-list li .status label input {
+  position: relative;
+  top: 0.125rem;
+}
+main #list .event-listing .grid-view article .tile .banner {
+  height: 2.1875rem;
+  padding-top: 0.3125rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+main #list .event-listing .grid-view article .tile .banner.meeting {
+  background: #607D8B;
+  -webkit-box-shadow: 0 0 10px #607D8B;
+  -moz-box-shadow: 0 0 10px #607D8B;
+  -o-box-shadow: 0 0 10px #607D8B;
+  -ms-box-shadow: 0 0 10px #607D8B;
+  box-shadow: 0 0 10px #607D8B;
+}
+main #list .event-listing .grid-view article .tile .banner.appointment {
+  background: #00796B;
+  -webkit-box-shadow: 0 0 10px #00796B;
+  -moz-box-shadow: 0 0 10px #00796B;
+  -o-box-shadow: 0 0 10px #00796B;
+  -ms-box-shadow: 0 0 10px #00796B;
+  box-shadow: 0 0 10px #00796B;
+}
+main #list .event-listing .grid-view article .tile .banner.plan {
+  background: #424242;
+  -webkit-box-shadow: 0 0 10px #424242;
+  -moz-box-shadow: 0 0 10px #424242;
+  -o-box-shadow: 0 0 10px #424242;
+  -ms-box-shadow: 0 0 10px #424242;
+  box-shadow: 0 0 10px #424242;
+}
+main #list .event-listing .grid-view article .tile .banner.reminder {
+  background: #A52A2A;
+  -webkit-box-shadow: 0 0 10px #A52A2A;
+  -moz-box-shadow: 0 0 10px #A52A2A;
+  -o-box-shadow: 0 0 10px #A52A2A;
+  -ms-box-shadow: 0 0 10px #A52A2A;
+  box-shadow: 0 0 10px #A52A2A;
+}
+main #list .event-listing .grid-view article .tile .equal-height {
+  margin-bottom: 0.625rem;
+}
+@media (min-width: 768px) {
+  main #list .event-listing .grid-view article .tile .equal-height {
+    height: 9.375rem;
+    overflow-y: auto;
+  }
+}

@@ -1,0 +1,50 @@
+<div id="plan">
+    <h2>Create an Plan</h2>
+    <div class="row js-calendar">
+        <div class="col-md-6 col-xs-12 form-input">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" {{#if data.title}}value="{{data.title}}" {{/if}} />
+        </div>
+        <div class="col-md-6 col-xs-12 form-input">
+            <label for="date">Date:</label>
+            <div class="calendar">
+                <input type='text' class="date" id="date" name="date" readonly/>
+                <span class="glyphicon glyphicon-calendar icon"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row js-time">
+        <div class="col-md-6 col-xs-12 form-input">
+            <label for="from">From (Available Time Slots):</label>
+            <div class="custom-dropdown">
+                <select id="from" name="from">
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-12 form-input">
+            <label for="to">To (Available Time Slots):</label>
+            <div class="custom-dropdown">
+                <select id="to" name="to">
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-12 form-input">
+            <span role="button" class="btn btn-success add-task" tabindex="0">Add Task</span>
+            <span role="button" class="btn btn-danger remove-task" tabindex="0">Remove Task</span>
+            <div class="task-container row">
+                {{#each data.tasks}}
+	                <div class="col-xs-12 col-md-6 task">
+	                    <label for="task{{@index}}">Task {{id}}</label>
+	                    <input type="text" name="task{{@index}}" id="task{{@index}}" value="{{title}}" />
+	                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    <div class="text-center submit">
+        <button type="submit" class="btn btn-default">{{#if data}}Edit{{else}}Create{{/if}}</button>
+        <span class="error">No Time Slot available.</span>
+    </div>
+</div>

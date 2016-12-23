@@ -1,0 +1,35 @@
+<div id="reminder">
+    <h2>Create an Reminder</h2>
+    <div class="row">
+        <div class="col-md-12 col-xs-12 form-input">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" {{#if data.title}}value="{{data.title}}"{{/if}} />
+        </div>
+    </div>
+    <div class="row js-calendar js-time">
+        <div class="col-md-6 col-xs-12 form-input">
+            <label for="date">Date:</label>
+            <div class="calendar">
+                <input type='text' class="date" id="date" name="date" readonly/>
+                <span class="glyphicon glyphicon-calendar icon"></span>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-12 form-input">
+            <label for="from">Time:</label>
+            <div class="custom-dropdown">
+                <select id="from" name="from">
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-12 form-input">
+            <label for="desc">Description</label>
+            <textarea id="desc" name="desc" {{#if data.description}}value="{{data.description}}"{{/if}}></textarea>
+        </div>
+    </div>
+    <div class="text-center submit">
+        <button type="submit" class="btn btn-default">{{#if data}}Edit{{else}}Create{{/if}}</button>
+        <span class="error">No Time Slot available.</span>
+    </div>
+</div>
