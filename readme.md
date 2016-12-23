@@ -4,6 +4,6 @@ This application allows user to scheduler meetings/appointment/reminder/plan for
 
 Steps to run the application:
   - Install node, ruby, compass.
-  - Go to the root folder (Event-Scheduler), run 'npm install' in the command prompt.
+  - Go to the root folder (Event-Scheduler), run 'npm install -g gulp-cli' & 'npm install' in the command prompt.
   - Go to app folder and run 'bower install'
   - That's it. Now you can run the app by going to the root folder and run command 'gulp'.
